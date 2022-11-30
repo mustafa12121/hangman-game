@@ -1,0 +1,363 @@
+:root {
+  --main-size: 4px;
+  --main-color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  user-select: none;
+}
+
+body {
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 52px;
+  background-color: #097634;
+  font-size: 20px;
+  color: white;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+header span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff9800;
+}
+.container {
+  width: 1000px;
+  margin: 52px auto;
+}
+.row {
+  background-color: #eee;
+  height: 500px;
+  padding: 10px 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.row .drow,
+.row .chars {
+  position: relative;
+  background-color: #fdfdfd;
+  flex: 1;
+}
+
+.row .drow {
+  position: relative;
+}
+
+.row .drow .the-stand {
+  width: 100px;
+  height: var(--main-size);
+  background-color: var(--main-color, #222);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50px;
+  visibility: hidden;
+}
+
+.row .drow .the-bar {
+  height: 400px;
+  width: var(--main-size);
+  background-color: var(--main-color, #222);
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.row .drow .the-hang {
+  width: 150px;
+  height: var(--main-size);
+  background-color: var(--main-color, #222);
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  visibility: hidden;
+}
+
+.row .drow .the-hang::before {
+  content: "";
+  position: absolute;
+  width: var(--main-size);
+  background-color: var(--main-color, #222);
+  height: 65px;
+  visibility: hidden;
+  top: 0px;
+  left: 102px;
+}
+
+.row .drow .the-hang::after {
+  content: "";
+  width: 63px;
+  height: 80px;
+  border-radius: 50%;
+  border: var(--main-size) dashed var(--main-color, #222);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  right: 12px;
+  top: 65px;
+  visibility: hidden;
+  position: absolute;
+}
+
+.row .drow .the-man * {
+  visibility: hidden;
+}
+
+.row .drow .the-man {
+  position: relative;
+  transition: 0.3s;
+  margin-right: -22px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.row .drow .the-man .the-head {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: var(--main-size) solid var(--main-color);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  right: 95px;
+  -o-border-radius: 50%;
+  top: 195px;
+  background-color: #f5eec4;
+}
+
+.row .drow .the-man .the-head .the-eys {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  top: 50px;
+  margin-top: -20px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.row .drow .the-man .the-head .the-eys::after,
+.row .drow .the-man .the-head .the-eys::before {
+  content: "";
+  flex: 1;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid var(--main-color, #222);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-image: radial-gradient(black 40%, transparent 50%);
+}
+
+.row .drow .the-man .the-head .mous {
+  position: absolute;
+  width: 42px;
+  height: 40px;
+  top: 45px;
+  margin-top: -20px;
+  left: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  border-color: transparent transparent var(--main-color);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.row .drow .the-man .the-body {
+  position: absolute;
+  width: var(--main-size);
+  height: 100px;
+  right: 134px;
+  top: 275px;
+  background-color: var(--main-color);
+}
+
+.row .drow .the-man .the-armes::after,
+.row .drow .the-man .the-armes::before {
+  content: "";
+  width: 75px;
+  height: var(--main-size);
+  background-color: var(--main-color);
+  position: absolute;
+  top: 310px;
+}
+
+.row .drow .the-man .the-armes::before {
+  transform: rotate(45deg);
+  right: 72px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.row .drow .the-man .the-armes::after {
+  transform: rotate(-45deg);
+  right: 125px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.row .drow .the-man .the-fots::after,
+.row .drow .the-man .the-fots::before {
+  content: "";
+  width: 75px;
+  height: var(--main-size);
+  background-color: var(--main-color);
+  position: absolute;
+  top: 400px;
+}
+
+.row .drow .the-man .the-fots::before {
+  transform: rotate(45deg);
+  right: 72px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.row .drow .the-man .the-fots::after {
+  transform: rotate(-45deg);
+  right: 125px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.row .drow .fot-stands {
+  width: 175px;
+  transition: 0.3s;
+  height: var(--main-size);
+  background-color: var(--main-color);
+  left: 48%;
+  position: absolute;
+  bottom: 46px;
+  visibility: hidden;
+}
+
+.row .chars {
+  display: flex;
+  justify-content: center;
+  padding: 15px 50px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+}
+
+.row .chars .letter {
+  width: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  background-color: #009545;
+  color: white;
+  font-size: 24 px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.row .chars .letter.clicked {
+  background-color: var(--main-color);
+  opacity: 0.2;
+  pointer-events: none;
+}
+.chos-chars {
+  height: 70px;
+  background-color: #e4e4e4e4;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 7px;
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  -ms-transform: translatex(-50%);
+  -o-transform: translatex(-50%);
+}
+.chos-chars span {
+  height: 52px;
+  width: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #009545;
+}
+
+.chos-chars span:empty:not(.space) {
+  background-color: #fdfdfd;
+  border-bottom: var(--main-size) solid var(--main-color);
+}
+
+span.space {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.space::after {
+  content: "";
+  width: 20px;
+  height: var(--main-size);
+  background-color: var(--main-color);
+}
+
+.row .drow.wrong-1 .the-stand {
+  visibility: visible;
+}
+.row .drow.wrong-2 .the-bar {
+  visibility: visible;
+}
+.row .drow.wrong-3 .the-hang {
+  visibility: visible;
+}
+.row .drow.wrong-4 .the-hang::before {
+  visibility: visible;
+}
+.row .drow.wrong-5 .the-hang::after {
+  visibility: visible;
+}
+.row .drow.wrong-6 .fot-stands {
+  visibility: visible;
+}
+
+.row .drow.wrong-7 .the-man * {
+  visibility: visible;
+}
